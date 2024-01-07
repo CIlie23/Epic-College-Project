@@ -1,0 +1,115 @@
+/*possible order is top > left > bottom > right?*/
+@font-face {
+    font-family: 'Fixedsys';
+    src: url(Fixedsys.ttf);
+}
+
+body{
+    background-image: url('static/leBG.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: 'Fixedsys';
+
+}
+.registrationBox{
+    border: 5px solid black;
+    padding: 12px 35px 35px 35px;
+    margin : 12px 50px 12px 50px;
+}
+
+.registrationInputs{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
+    padding-top: 10px;    
+}
+
+.leButton{
+    margin: 10px;
+    float: right;
+    font-family: 'Fixedsys';
+}
+.boxSize{
+    margin: 7px;
+    padding: 5px;
+    border-width: 2px;
+    width: 260px;
+    
+}
+
+.title{
+    text-align: center;
+
+}
+
+.wholeDoc{
+    display: grid;
+}
+
+.pageLogo{
+    margin: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.registrationContainer{
+    background-color: #fff;
+    padding: 20px;
+
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tabs {
+    margin-bottom: 20px;
+}
+
+.tab {
+    display: inline-block;
+
+    padding: 10px;
+    cursor: pointer;
+    user-select: none;
+    margin: 0 10px;
+}
+
+.active {
+    background-color: #4caf50;
+    color: #fff;
+}
+
+#login-form {
+    display: block; /* Show the login form by default */
+    text-align: left;
+    
+}
+
+#register-form {
+   
+    text-align: left;
+   
+}
+
+#logInProblems{
+    text-align: center;
+}
+
+#error-container {
+    white-space: nowrap;
+    text-align: center;
+}
+.error-message{
+    text-align: center;
+    display: inline-block; 
+    margin-bottom: 20px;
+
+}

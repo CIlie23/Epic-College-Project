@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="icon" type="image/x-icon" href="static/logo.ico" alt="logo">
+    <title>{% block title %}Home{% endblock %}</title>
+</head>
+<body>
+  <div>
+    {%block body%}
+    <h1>This is a template</h1>
+    <p>Anything that I add here will change all the pages because all the pages extend this file!</p>
+    {%endblock%}
+  </div>
+
+  <script src="static/signUpPage.js"></script>
+</body>
+</html>

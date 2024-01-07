@@ -1,0 +1,43 @@
+{% extends "base.html" %} {#Commenting like this is insanity#}
+
+{% block title %}Login{% endblock %} 
+
+{% block body %}
+<div class ="wholeDoc">
+            
+    <div class ="pageLogo">
+        <img class ="pageLogo" src="static/logo.png" alt="logo">
+    </div>
+
+    <div id="error-container">
+        <div id="emailError" class="error-message"></div>
+        <div id="passwordError" class="error-message"></div>
+        <div id="confirmPasswordError" class="error-message"></div>
+    </div>
+
+    <div class="registrationContainer">    
+        <form id="login-form">
+            <label for="email">E-mail:</label>
+            <input class="boxSize" type="email" id="email" name="email" required>
+           
+            <label for="email">Password:</label>
+            <input class="boxSize" type="password" id ="password" name="password" required>
+
+            <div > 
+                <p class="logInProblems">Login problems? Click <a href="/account-issues">here</a>!</p>
+                <p>Don't have an account? Click <a href="/sign-up">here</a>!</p>
+            </div> 
+              
+            <div>
+                <button type="submit" class="leButton">Login</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}
+
+{# {% if boolean == True%} 
+Text goes here, check auth.py, if bool true will display dis
+jinja is weird
+{% else %}
+If bool is not true will display dis
+{%endif%} #}
