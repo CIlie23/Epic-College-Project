@@ -1,0 +1,26 @@
+<!-- change_password.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Change Password</title>
+    <link href="static/styles.css" rel="stylesheet">
+</head>
+<body>
+    <div class="registrationContainer">
+        <form action="{{ url_for('auth.change_password') }}" method="post">
+            <h1>Change Password</h1>
+            <label for="current_password">Current Password:</label>
+            <input class="boxSize" type="password" name="current_password" required><br>
+
+            <label for="new_password">New Password:</label>
+            <input class="boxSize" type="password" name="new_password" required><br>
+
+            <label for="confirm_password">Confirm Password:</label>
+            <input class="boxSize" type="password" name="confirm_password" required><br>
+            <div>
+                <button class="leButton" type="submit">Change Password</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

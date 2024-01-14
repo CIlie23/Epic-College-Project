@@ -1,0 +1,46 @@
+@font-face {
+    font-family: VCR;
+    src: url(VCR_OSD_MONO_1.001.ttf);
+  }
+  
+  #wholePage{
+    font-family: VCR;
+    text-align: center;
+  }
+
+.buttonDesign{
+    margin: 10px 10px 10px 10px;
+    font-size: 16px;
+    padding: 15px 15px;
+}
+
+.nivelThing{
+    font-family: VCR;
+    
+}
+
+.coolLabel{
+  margin-left: 30px;
+}
+
+.initiateGame{
+    margin-top: 20px;
+    text-align: center;
+}
+
+.userProfile{
+  text-align: right;
+  align-items: center;
+}
+
+.flex-container{
+  display: flex;
+  align-items: right;
+}
+
+.profile-button {
+
+  position: fixed;
+  top: 10px; /* Set the top position as per your design */
+  right: 10px; /* Set the right position as per your design */
+}

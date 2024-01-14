@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="static/logo.ico" alt="logo">
+    <link href="static/styles.css" rel="stylesheet">
+    <title>Profile</title>
+    <style>
+        .flexbox{
+          display: flex;
+          
+      }
+      
+      .user-pfp{
+          max-width: 100%;
+      }
+      .user-info {
+          margin-left: 20px;
+      }
+      
+      .center-block {
+        width: 30%; /* Adjust the width as needed */
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .button{
+        width: 64px;
+        height: 64px;
+      }
+      
+    </style>
+</head>
+<body style="color: white;">
+    <h1 style="text-align: center;">This is your user profile!</h1>
+    <div class="flexbox">
+        
+        <div class="center-block">
+            <p>Hello {{ current_user.username }} !</p>
+            <p>Your current email is: {{ current_user.email }}</p>
+            <p>Your current user role is: {{ current_user.role }}</p>
+            <p>Your unique User ID: {{ current_user.id }}</p>
+            <p>Your current highest score is: {{ current_user.highest_score }}</p>
+    
+            <h3>Account settings</h2>
+            <p>User related settings right here!</p>
+            <button><a id="logout" href="/logout">Log out</a></button>
+            <button><a href="/change-password">Change password</a></button>
+            
+            {% if current_user.id == 1 %}
+                {# don't show the delete account button#}
+            {% else %}
+            <h3>Danger zone !</h3>
+            <label>Account deletion is instant, don't come crying to me if you did it by accident</label>
+            <form action="{{ url_for('auth.delete_account') }}" method="post">
+                <button type="submit">Delete Account</button>
+            </form>
+            {%endif%}
+    
+            <div class="adminstuff">
+            {% if current_user.id == 1 %}
+            <h3>Admin Table</h2>
+            <table border="2">
+                <tr>
+                    <th>IDs</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>High score</th>
+                    <th>Actions</th>
+                </tr>
+                {% for user in users %}
+                <tr>
+                    <td>{{ user.id }}</td>
+                    <td>{{ user.username }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.highest_score }}</td>
+                    <td><button>Delete</button></td>
+                </tr>
+                {% endfor %}
+            {% endif %}
+            </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

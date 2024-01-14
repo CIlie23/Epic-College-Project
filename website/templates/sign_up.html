@@ -1,48 +1,53 @@
-{% extends "base.html" %} {% block title %}Sign Up{% endblock %} 
-
-{% block body %}
-<div class ="wholeDoc">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="static/logo.ico" alt="logo">
+    <link href="static/styles.css" rel="stylesheet">
+    <title>Log in</title>
+</head>
+<body>
+    <div class ="wholeDoc">
             
-    <div class ="pageLogo">
-        <img class ="pageLogo" src="static/logo.png" alt="logo">
-    </div>
-
-    <div id="error-container">
-        <div id="emailError" class="error-message"></div>
-        <div id="passwordError" class="error-message"></div>
-        <div id="confirmPasswordError" class="error-message"></div>
-    </div>
+        <div class ="pageLogo">
+            <img class ="pageLogo" src="static/logo.png" alt="logo">
+        </div>
     
-    <div class="registrationContainer">
-        <form id="register-form" >
-           <label for="inputUser">Username:</label>
-            <input id="inputUser" class="boxSize" type="text" id="username" name="username" required>
-            
-            <label for="inputUser">Email:</label>
-            <input class="boxSize" type="email" id="email" name="email" required>
-          
-
-            <label for="email">Password:</label>
-            <input class="boxSize" type="password" id="password" name="password" required>
-  
-
-            <label for="email">Confirm Password:</label>
-            <input class="boxSize" type="password" id="confirmPassword" name="passwordConfirm" required>
-
-
-            <div>
-                <label for="TOS"><a href="/terms-of-service">Terms of Service</a></label>
-                <input type="checkbox" id="TOS" required>
-                <label for="TOS">Accept?</label>
-                <p>Already have an account? Click <a href="/login">here</a>!</p>
-            </div>
-
-            <div>
-                <button type="submit" class="leButton">Register</button>
-            </div>
-        </form>
-    </div>
+        <div id="error-container">
+            <div id="emailError" class="error-message"></div>
+            <div id="passwordError" class="error-message"></div>
+            <div id="confirmPasswordError" class="error-message"></div>
+        </div>
+        
+        <div class="registrationContainer">
+            <form id="register-form" method="POST">
+               <label for="inputUser">Username:</label>
+                <input id="inputUser" class="boxSize" type="text" id="firstName" name="firstName">
+                
+                <label for="inputUser">Email:</label>
+                <input class="boxSize" type="email" id="email" name="email" >
+              
     
-   
-    <script src="static/signUpPage.js"></script>
-{% endblock %}
+                <label for="email">Password:</label>
+                <input class="boxSize" type="password" id="password" name="password" >
+      
+    
+                <label for="email">Confirm Password:</label>
+                <input class="boxSize" type="password" id="passwordConfirm" name="passwordConfirm" >
+    
+    
+                <div>
+                    <label for="TOS"><a href="/terms-of-service">Terms of Service</a></label>
+                    <input type="checkbox" id="TOS" required>
+                    <label for="TOS">Accept?</label>
+                    <p>Already have an account? Click <a href="/login">here</a>!</p>
+                </div>
+    
+                <div>
+                    <button type="submit" class="leButton">Register</button>
+                </div>
+            </form>
+        </div>
+</body>
+</html>

@@ -5,7 +5,7 @@
 }
 
 body{
-    background-image: url('static/leBG.png');
+    background-image: url('leBG.png');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;

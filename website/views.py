@@ -9,5 +9,5 @@ views = Blueprint('views', __name__) #name it views cause is simple
 
 def home():
    #2:03:00
-   # return "<h1>test</h1>" #register in init
+    #return "<h1>test</h1>" #register in init
    return render_template("home.html", user=current_user) #user=current_user check if user is authenticated
