@@ -31,6 +31,10 @@ body{
     float: right;
     font-family: 'Fixedsys';
 }
+
+.dontAsk{
+    font-family: 'Fixedsys';
+}
 .boxSize{
     margin: 7px;
     padding: 5px;
@@ -88,7 +92,7 @@ body{
 }
 
 #login-form {
-    display: block; /* Show the login form by default */
+    display: block; 
     text-align: left;
     
 }

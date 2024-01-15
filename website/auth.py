@@ -99,11 +99,29 @@ def change_password():
 @login_required
 def delete_account():
     if request.method == 'POST':
-        user = current_user
-        user.delete()
-        logout_user()  
-        flash('Account deleted successfully.', category='success')
-        return redirect(url_for('.sign_up')) 
+        if 'user_id' in request.form:
+            # Administrator is trying to delete a user
+            if current_user.id == 1:
+                user_id = int(request.form['user_id'])
+                user_to_delete = User.query.get(user_id)
+
+                if user_to_delete:
+                    db.session.delete(user_to_delete)
+                    db.session.commit()
+                    flash(f'User with ID {user_id} deleted successfully.', category='success')
+                else:
+                    flash('User not found.', category='error')
+            else:
+                flash('You do not have permission to delete users.', category='error')
+        else:
+            # Regular user is trying to delete their own account
+            user = current_user
+            user.delete()
+            logout_user()
+            flash('Account deleted successfully.', category='success')
+
+    return redirect(url_for('.lobotomy'))
+
 
 @auth.route('/terms-of-service')
 def tos():
@@ -122,6 +140,10 @@ def get_all_users():
 def user_profile():
     users = get_all_users()
     return render_template("profile.html", users=users, user=current_user)
+
+@auth.route('/lobotomy')
+def lobotomy():
+    return render_template("lobotomy.html", user=current_user)
 
 @auth.route('/save_score/<int:nivel>') #i am killing myself
 @login_required

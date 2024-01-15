@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="static/logo.ico" alt="logo">
+  <!--<title>Get Lobotomised !</title>-->
+  <link href="static/styles.css" rel="stylesheet">
+</head>
+<body style="color: white;">
+    <h1 class="title">BAHAHAHAH LOBOTOMY SIMULATOR!</h1>
+    <div style= "align-items: center; display: flex; justify-content: center;">
+    <div id=":("></div>
+    <!--<img class="registrationInputs" src="static/rat-spinning.gif" alt="Why do I feel this way">-->
+    </div>
+    <div style="align-items: center; display: flex; justify-content: center;">
+    <p id="coolPar">You have been getting a lotobomy for:</p>
+    <label for="coolPar" id="minutes">00</label>:<label id="seconds">00</label>
+    </div>
+
+    <div style= "align-items: center; display: flex; justify-content: center;">
+    <button class="leButton"id="lobotomyButton" onclick="engageLobotomy()">Click to engage</button>
+    </div>
+    
+    <script>
+        (function titleScroller(text) {
+            document.title = text;
+            console.log(text);
+            setTimeout(function () {
+                titleScroller(text.substr(1) + text.substr(0, 1));
+            }, 500);
+        }("Get Lobotomised ! Get Lobotomised !"));
+        /*stolen from here
+        https://stackoverflow.com/questions/16354122/how-to-put-scrolling-text-in-title-tag*/
+    </script>
+	
+	<script>
+        function engageLobotomy(){
+            document.getElementById('lobotomyButton').disabled = true;
+            var audio = new Audio('static/freebird.mp3');
+            audio.play();
+            audio.loop = true;
+            timerWhatever()
+            imageWoosh()
+        }
+
+        function timerWhatever(){
+            var minutesLabel = document.getElementById("minutes");
+            var secondsLabel = document.getElementById("seconds");
+            var totalSeconds = 0;
+            setInterval(setTime, 1000);
+    
+            function setTime() {
+            ++totalSeconds;
+            secondsLabel.innerHTML = pad(totalSeconds % 60);
+            minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
+            }
+    
+            function pad(val) {
+            var valString = val + "";
+            if (valString.length < 2) {
+                return "0" + valString;
+            } else {
+                return valString;
+            }
+            }
+            /*Stolen from here
+            https://stackoverflow.com/questions/5517597/plain-count-up-timer-in-javascript*/
+        }
+
+        function imageWoosh(){
+
+        var image = document.createElement("img");{
+            image.src = "static/rat-spinning.gif";
+            image.alt = "Why do I feel this way";
+        }
+        var imageContainer = document.getElementById(":(");{
+            imageContainer.appendChild(image);
+        }
+    }   
+	</script>
+</body>
+</html>
